@@ -11,10 +11,7 @@ const Table = ({ tableData }) => {
     const storedData = localStorage.getItem('tableData');
     return storedData ? JSON.parse(storedData) : tableData.data || [];
   });
-  const [filteredColumns, setFilteredColumns] = useState(() => {
-    const storedColumns = localStorage.getItem('selectedColumns');
-    return storedColumns ? JSON.parse(storedColumns) : Object.keys(columns);
-  });
+  const [filteredColumns, setFilteredColumns] = useState(Object.keys(columns));
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
