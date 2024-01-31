@@ -18,6 +18,13 @@ const Table = ({ tableData }) => {
     setColumns(tableData.columns || {});
     setFilteredColumns(Object.keys(tableData.columns || {}));
     setRows(tableData.data || []);
+
+    const storedData = localStorage.getItem('tableData');
+    const parsedData = JSON.parse(storedData);
+
+    if (Array.isArray(parsedData)) {
+      setRows(parsedData);
+    }
   }, [tableData]);
 
   useEffect(() => {
