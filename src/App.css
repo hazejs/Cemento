@@ -10,6 +10,7 @@ tr:nth-child(even) {
 
 table {
   width: 100%;
+  Table-Layout:fixed;
 }
 
 tr {
